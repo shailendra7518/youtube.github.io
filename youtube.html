@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #container{
+            /* border: 2px solid red; */
+            height: 729px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+           
+         
+        }
+        #navbar{
+            display: flex;
+            flex-flow: column;
+        }
+        #top{
+            display: grid;
+            /* border: 2px solid red; */
+          grid-template-columns: 20% 60% 20%;
+        }
+        #other{
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-around;
+        }
+        button{
+          font-size: 20px;
+            /* border: 2px solid rgb(1, 253, 14); */
+        }
+        input{
+            width: 40%;
+            font-size: 30px;
+        }
+        #search{
+            display: flex;
+           
+           height: 40px;
+           justify-content: center;
+           padding: 6px;
+        }
+        #some_fethurs{
+            border: 2px solid black;
+             display: flex;
+             border-radius: 5px;
+             
+            justify-content: space-around;
+           
+           
+        }
+        #some_fethurs>p{
+            border: 1px solid rgb(58, 56, 56);
+            border-radius: 40%;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px;
+           margin: 0.2% 0% 0.2% 0%;
+           background-color: rgb(224, 226, 228);
+         height: 13px;
+          color: rgb(26, 23, 23);  
+        }
+        #some_fethurs>p:hover{
+            background-color: steelblue;
+            border-radius: 50%;
+        }
+        #main{
+            /* border: 2px solid red; */
+            width: 100%;
+            height: 84.6%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        #filter{
+            height: 100%;
+            border: 0.2px solid black;
+            
+            width: 22%;
+            display: flex;
+            flex-flow: column;
+           overflow: scroll;
+
+        }
+        #filter>div{
+            height: 600px;
+           text-align: center;
+            border-top: 1px solid gray;
+        }
+        #filter>div>h3:hover{
+           cursor: pointer;
+           text-decoration: underline;
+           color: lightslategrey;
+        }
+        #result{
+            width: 100%;
+            height: 100%;
+           
+             /* border: 2px solid red; */
+            display: grid;
+            grid-template-columns: 22% 22% 22% 22%;
+            overflow: scroll;
+            grid-gap: 46px;
+        
+        }
+        #result>div>img{
+            width: 100%; 
+            height: 80%;
+            border-radius: 3px;
+        }
+        img{
+            height: 50px;
+          
+        }
+        #logo{
+            /* border: 2px solid red; */
+        }
+        #acount{
+            border-radius: 30px;
+        }
+
+        @media screen and (min-device-width: 0px) and (max-device-width: 380px) { 
+            body{
+                margin: 0px;
+            }
+     #container{
+         justify-content: start;
+     }
+     #main{
+         width: 100%;
+       /* border: 2px solid red; */
+     }
+            #filter{
+            display: none;
+        }
+        #result{
+            margin-top: 0px;
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+           
+        }
+        #result>div{
+           /* border: 2px solid red; */
+           height: 300px;
+          
+        }
+        #result>div>img{
+            height: 70%;
+        }
+        #top{
+            width: 100%;
+            /* border: 2px solid red; */
+            height: 26px;
+            display: flex;
+            padding: 0px;
+            justify-content: space-between;
+        }
+      
+       #logo>img{
+       height: 26px;
+       width: 80px;
+        
+        }
+      #video{
+          width: 90px;
+          height: 21px;
+          font-size: 15px;
+      }
+      #other{
+          width: 26%;
+          height: 26px;
+          display: flex;
+          justify-content: space-between;
+          /* background-color: rgb(58, 56, 56); */
+      }
+      #other>img{
+          height: 26px;
+      }
+      #acount{
+   height: 26px;
+      }
+      #but{
+          width: 35px;
+          font-size: 10px;
+          padding: 0%;
+          height: 26px;
+      }
+      #search{
+          width: 47%;
+          padding: 0%;
+          margin-top: 0px;
+          height: 26px;
+      }
+      #navbar{
+          height: 80px;
+        
+          margin-bottom: 0px;
+         width: 100%;
+      }
+      #some_fethurs{
+          margin-top: 1px;
+        display: flex;
+      overflow: hidden;
+      justify-content: space-between;
+      overflow-x: scroll;
+      background-color: white;
+      border: none;
+      
+      }
+      #some_fethurs>p{
+          border: none;
+        width: 20%;
+          border-radius: 0px;
+          background-color: white;
+      }
+      #some_fethurs>p:hover{
+        opacity: 0.7;
+
+      }
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <div id="top">
+                <div id="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuAYWbUQBcjuR97EV-eZ4XuPQ0wLM4ihzM5XHJ11IOqPvFxtYA6F-Dbj1Pa8STzAt1gQ&usqp=CAU" alt="">
+                </div>
+                <div id="search">  
+                   
+                    <input type="text" id="video" placeholder="Search">
+                    <button id="but" onclick="play()">search</button>
+                      </div>
+
+                    <div id="other">
+                      <img src="https://previews.123rf.com/images/mainfu/mainfu1811/mainfu181100524/112712399-notification-icon-vector-bell-with-a-red-circle-linear-sign.jpg" alt="">  
+                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEX///8AAADS0tKOjo65ubm9vb2SkpJFRUXR0dE/Pz/19fWJiYns7Ozi4uI7Ozu2trbJycmioqLq6urc3NxnZ2eRezsFAAABiUlEQVR4nO3cW26CUBSGUeUioFzF+Y+1A9ik7DTUNrjW+x/zParnnMsFAAAAAAAAAOB/mR/lvqUPuyGzewxh91wyu/nAwsc1YSzCbsrsrlXYtWNmVx5YWGY+sImFVaqwDruiyexuChUqVKhQoUKFChUqVKhQoUKFChUqVKhQoUKFChUqVKjwtwq74wrb7t2Fy9js6l5r2M3d/q7p4omD9ZUYjsuBhX2RsN7D7p7ZFRu7NbOLZz8AAACA7w1TtW+O39X7xKyq4nf1+5yYTfGexs+l7lu8/Zco9y0UKlSoUKFChQoVKlSoUKFChQoVKlSoUKFChQoVKlSoUOFnFp7/f/yhqvdtncVIzOp66yxGYlYdeRYDAAAAPsOz3X/hoN16UyGxK9qtNxUyH3jkmwrnfxfj/G+bnP/XRIUKFSpUqFChQoUKFSpUqFChQoUKFSpUqFChQoUKFSr8nMLUfYsxFk6pwirs2jGzO/K+xVze9i3xbMSQ2ZXx3kS/ZHbxhAMAAAAAAAAAwN/6AmxYUa6n3IvtAAAAAElFTkSuQmCC" alt="">
+                  <img  id="acount" src="https://ca.slack-edge.com/T02ENN9T1FE-U02GYEU7THV-e1d3e4d4c0a7-512" alt="">
+                </div>
+              
+            </div>
+           
+          <div id="some_fethurs">
+              <p>All</p>
+              <p>Music</p>
+              <p>Mixes</p>
+              <p>Computers</p>
+              <p>video</p>
+              <p>Movie</p>
+              <p>Other</p>
+          </div>
+        </div>
+        <div id="main">
+            <div id="filter">
+                <div>
+                    <h3>Home</h3>
+                    <h3>Explore</h3>
+                    <h3>Subscription</h3>
+                </div>
+                <div>
+                    <h3>Library</h3>
+                    <h3>History</h3>
+                    <h3>Watch later</h3>
+                    <h3>Liked videos</h3>
+                </div>
+                <div>SUBSCRIPTION
+                    <h3>CodeWithHarry</h3>
+                    <h3>Tseries</h3>
+                    <h3>Goldmine</h3>
+                </div>
+                <div>MORE FROM YOUTUBE
+                    <h3>YouTube Premium</h3>
+                    <h3>Movies</h3>
+                    <h3>Gaming</h3>
+                    <h3>Live</h3>
+                    <h3>Fashion & Beauty</h3>
+                    <h3>Learning</h3>
+                    <h3>Sports</h3>
+                </div>
+                <div>
+                    <h3>Setting</h3>
+                    <h3>Report</h3>
+                    <h3>Help</h3>
+                    <h3>Send feedback</h3>
+                </div>
+            </div>
+            <div id="result"></div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
+<script>
+   let show= document.querySelector("#result")
+const api_key="AIzaSyDhInTF157ovZl6iPhTIej5bCAWs6hhRv4"
+display()
+    async function play(){
+        show.innerHTML=""
+        let video=document.querySelector("#video").value
+        try{
+            let response=await fetch(
+                `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${video}&type=video&key=${api_key}&maxResults=50&videoType=any`
+            )
+            let data=await response.json()
+            console.log(data.items)
+           
+            let main=data.items
+            localStorage.setItem("main",JSON.stringify(main))
+            display()
+        }catch(error){
+           
+        }
+    }
+
+    function display(){
+let data=JSON.parse(localStorage.getItem("main"))
+data.map((ele)=>{
+  
+let {snippet,id:{videoId},}=ele
+let div=document.createElement("div")
+let title=document.createElement("p")
+let tumb=document.createElement("img")
+tumb.src=snippet.thumbnails.high.url
+title.textContent=snippet.title
+
+
+div.append(tumb,title)
+show.append(div)
+div.addEventListener("click",function(){
+    localStorage.setItem("one_video",JSON.stringify(ele))
+    window.location.href="video.html"
+})
+
+})
+ 
+ }
+
+
+  
+</script>
