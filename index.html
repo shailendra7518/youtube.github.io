@@ -301,7 +301,7 @@
 <script>
    let show= document.querySelector("#result")
 const api_key="AIzaSyDhInTF157ovZl6iPhTIej5bCAWs6hhRv4"
-display()
+
 play()
     async function play(){
         show.innerHTML=""
@@ -323,7 +323,7 @@ play()
            
         }
     }
-
+    display()
     function display(){
 let data=JSON.parse(localStorage.getItem("main"))
 data.map((ele)=>{
