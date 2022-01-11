@@ -306,9 +306,7 @@ const api_key="AIzaSyBT8Wq4zvwSZFAHaBZ2-fTSTDlk1DgCOBE"
     async function play(){
         show.innerHTML=""
         let video=document.querySelector("#video").value
-        if(video==""){
-            video="bhakti song"
-        }
+       
         try{
             let response=await fetch(
                 `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${video}&type=video&key=${api_key}&maxResults=50&videoType=any`
